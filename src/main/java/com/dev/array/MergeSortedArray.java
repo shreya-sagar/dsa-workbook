@@ -24,10 +24,10 @@ public class MergeSortedArray {
             int index1 = 0;
             int index2 = 0;
             int mergeIndex = 0;
-            int small = 0;
+            int small = Math.min(n, m);
 
-            if (m <= n) {
-                while (index1 < m) {
+            if (small == m) {
+                while (index1 < small && index2 < n) {
                     if (nums1[index1] <= nums2[index2]) {
                         mergeArray[mergeIndex] = nums1[index1];
                         index1++;
@@ -38,13 +38,41 @@ public class MergeSortedArray {
                         mergeIndex++;
                     }
                 }
-
-
             } else {
-                while (index2 < n) {
-
+                while (index2 < small && index1 < m) {
+                    if (nums1[index1] <= nums2[index2]) {
+                        mergeArray[mergeIndex] = nums1[index1];
+                        index1++;
+                        mergeIndex++;
+                    } else {
+                        mergeArray[mergeIndex] = nums2[index2];
+                        index2++;
+                        mergeIndex++;
+                    }
                 }
             }
+
+            if (index1 < m) {
+                for (int i = index1; i < m; i++) {
+                    mergeArray[mergeIndex] = nums1[i];
+                    mergeIndex++;
+                }
+            }
+
+            if (index2 < n) {
+                for (int i = index2; i < n; i++) {
+                    mergeArray[mergeIndex] = nums2[i];
+                    mergeIndex++;
+                }
+            }
+
+            for (int i = 0; i < nums1.length; i++) {
+                nums1[i] = mergeArray[i];
+            }
         }
+    }
+
+    public static void main(String[] args) {
+
     }
 }
