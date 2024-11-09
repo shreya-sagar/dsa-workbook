@@ -1,6 +1,6 @@
-package com.dev.array;
+package com.dev.leetcode.easy;
 
-import com.dev.array.model.TreeNode;
+import com.dev.leetcode.easy.model.TreeNode;
 
 /**
  * Definition for a binary tree node.

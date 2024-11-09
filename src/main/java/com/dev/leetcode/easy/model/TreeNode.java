@@ -1,4 +1,4 @@
-package com.dev.array.model;
+package com.dev.leetcode.easy.model;
 
 
 public class TreeNode {

@@ -1,4 +1,4 @@
-package com.dev.array;
+package com.dev.leetcode.easy;
 
 public class MergeSortedArray {
 
