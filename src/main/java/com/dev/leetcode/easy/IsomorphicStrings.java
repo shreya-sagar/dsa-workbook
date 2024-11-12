@@ -21,41 +21,6 @@ public class IsomorphicStrings {
         if(s.length() == 1)
             return true;
 
-        int[] scount = new int[s.length()];
-        int[] tcount = new int[t.length()];
-
-        int i = 1;
-        int index = 0;
-        scount[0] = 1;
-        while (i < s.length()) {
-            String prev = s.charAt(i - 1) + "";
-            String current = s.charAt(i) + "";
-            if (current.equals(prev)) {
-                scount[index] = scount[index] + 1;
-            }
-            else {
-                index++;
-                scount[index] = scount[index] + 1;
-            }
-            i++;
-        }
-
-        i = 1;
-        index = 0;
-        tcount[0] = 1;
-        while (i < t.length()) {
-            String prev = t.charAt(i - 1) + "";
-            String current = t.charAt(i) + "";
-            if (current.equals(prev)) {
-                tcount[index] = tcount[index] + 1;
-            }
-            else {
-                index++;
-                tcount[index] = tcount[index] + 1;
-            }
-            i++;
-        }
-
         LinkedHashMap<String, Integer> smap = new LinkedHashMap<>();
         for (int j = 0; j < s.length(); j++) {
             String element = s.charAt(j) + "";
@@ -83,7 +48,7 @@ public class IsomorphicStrings {
         List<Integer> smapValues = smap.values().stream().toList();
         List<Integer> tmapValues = tmap.values().stream().toList();
 
-        return Arrays.equals(scount,tcount) && smapValues.equals(tmapValues);
+        return smapValues.equals(tmapValues);
     }
 
     public static void main(String[] args) {
