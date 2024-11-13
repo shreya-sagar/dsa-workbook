@@ -1,4 +1,4 @@
-package com.dev.leetcode.easy;
+package com.dev.leetcode;
 
 import java.math.BigInteger;
 import java.util.Arrays;
