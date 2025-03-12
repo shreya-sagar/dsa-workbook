@@ -58,6 +58,18 @@ public class LinkedList {
         return temp;
     }
 
+    public void prepend(int value) {
+        Node newNode = new Node(value);
+        if(length == 0) {
+            head = newNode;
+            tail = newNode;
+        } else {
+            newNode.next = head;
+            head = newNode;
+        }
+        length++;
+    }
+
     @Override
     public String toString() {
         return "LinkedList{" +
@@ -67,8 +79,8 @@ public class LinkedList {
                 '}';
     }
 
-    static class Node {
-        private int value;
+     static class Node {
+        private final int value;
         private Node next;
 
          Node(int value) {
