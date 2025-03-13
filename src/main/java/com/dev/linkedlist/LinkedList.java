@@ -36,6 +36,23 @@ public class LinkedList {
         length++;
     }
 
+    public Node removeFirst() {
+        if(length == 0) {
+            System.out.println("Remove First Element not possible, Linked List is empty");
+            return null;
+        }
+        Node temp = head;
+        if(length == 1) {
+            head = null;
+            tail = null;
+        } else {
+            head = head.next;
+            temp.next = null;
+        }
+        length--;
+        return temp;
+    }
+
     public Node removeLast() {
         if(length == 0) {
             System.out.println("Remove Last Element not possible, Linked List is empty");

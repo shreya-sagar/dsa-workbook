@@ -17,5 +17,8 @@ public class LinkedListMain {
         linkedList.prepend(100);
         linkedList.printList();
         System.out.println(linkedList);
+
+        linkedList.removeFirst();
+        System.out.println(linkedList);
     }
 }
