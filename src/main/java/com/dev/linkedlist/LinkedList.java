@@ -12,16 +12,16 @@ public class LinkedList {
         length = 1;
     }
 
-    public void printList() {
+    public void prepend(int value) {
+        Node newNode = new Node(value);
         if(length == 0) {
-            System.out.println("Linked List Empty");
-            return;
+            head = newNode;
+            tail = newNode;
+        } else {
+            newNode.next = head;
+            head = newNode;
         }
-        Node node = head;
-        while(node != null) {
-            System.out.println(node.value);
-            node = node.next;
-        }
+        length++;
     }
 
     public void append(int value) {
@@ -75,16 +75,77 @@ public class LinkedList {
         return temp;
     }
 
-    public void prepend(int value) {
-        Node newNode = new Node(value);
-        if(length == 0) {
-            head = newNode;
-            tail = newNode;
-        } else {
-            newNode.next = head;
-            head = newNode;
+    public Node get(int index) {
+        if(index < 0 || index >= length) {
+            return null;
         }
+        Node temp = head;
+        for (int i = 0; i < index; i++) {
+            temp = temp.next;
+        }
+        return temp;
+    }
+
+    public boolean set(int index, int value) {
+        Node temp = get(index);
+        if(temp != null) {
+            temp.value = value;
+            return true;
+        }
+        return false;
+    }
+
+    public boolean insert(int index, int value) {
+        if(index < 0 || index > length) {
+            System.out.println("Index > Length, Set not possible");
+            return false;
+        }
+
+        if(index == 0) {
+            prepend(value);
+            return true;
+        }
+
+        if(index == length) {
+            append(value);
+            return true;
+        }
+
+        Node newNode = new Node(value);
+        Node temp = get(index - 1);
+        newNode.next = temp.next;
+        temp.next = newNode;
+
         length++;
+        return true;
+    }
+
+    public Node remove(int index) {
+        if(index < 0 || index >= length) {
+            System.out.println("Remove not possible on this index " + index);
+            return null;
+        }
+        if(index == 0) return removeFirst();
+        if(index == length - 1) return removeLast();
+
+        Node prev = get(index - 1);
+        Node temp = prev.next;
+        prev.next = temp.next;
+        temp.next = null;
+        length--;
+        return temp;
+    }
+
+    public void printList() {
+        if(length == 0) {
+            System.out.println("Linked List Empty");
+            return;
+        }
+        Node node = head;
+        while(node != null) {
+            System.out.println(node.value);
+            node = node.next;
+        }
     }
 
     @Override
@@ -97,7 +158,7 @@ public class LinkedList {
     }
 
      static class Node {
-        private final int value;
+        private int value;
         private Node next;
 
          Node(int value) {
