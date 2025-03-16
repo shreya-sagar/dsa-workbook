@@ -136,6 +136,27 @@ public class LinkedList {
         return temp;
     }
 
+    public void reverse() {
+        if(length == 0) {
+            System.out.println("Reverse not possible : Empty Linked List");
+        }
+        if(length > 1) {
+            Node temp = head;
+            head = tail;
+            tail = temp;
+
+            Node after = temp.next;
+            Node before = null;
+
+            for (int i = 0; i < length; i++) {
+                after = temp.next;
+                temp.next = before;
+                before = temp;
+                temp = after;
+            }
+        }
+    }
+
     public void printList() {
         if(length == 0) {
             System.out.println("Linked List Empty");

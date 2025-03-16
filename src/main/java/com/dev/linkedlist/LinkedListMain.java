@@ -42,5 +42,14 @@ public class LinkedListMain {
         System.out.println(linkedList);
         System.out.println(linkedList.remove(0));
         System.out.println(linkedList);
+
+        linkedList.reverse();
+        System.out.println(linkedList);
+        linkedList = new LinkedList(5);
+        linkedList.reverse();
+        System.out.println(linkedList);
+        linkedList.removeLast();
+        linkedList.reverse();
+        System.out.println(linkedList);
     }
 }
