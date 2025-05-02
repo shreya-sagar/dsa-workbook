@@ -20,6 +20,8 @@ public class AreOccurencesEqual {
                 return false;
         }
 
+        System.out.println("map : " + map);
+
         return true;
 
     }
