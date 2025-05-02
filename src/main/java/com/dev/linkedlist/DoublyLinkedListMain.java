@@ -6,5 +6,8 @@ public class DoublyLinkedListMain {
         DoublyLinkedList doublyLinkedList = new DoublyLinkedList(5);
         doublyLinkedList.append(20);
         doublyLinkedList.printList();
+        System.out.println(doublyLinkedList.removeLast());
+        System.out.println(doublyLinkedList.removeLast());
+        System.out.println(doublyLinkedList.removeLast());
     }
 }
