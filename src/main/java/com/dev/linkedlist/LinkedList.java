@@ -28,11 +28,10 @@ public class LinkedList {
         Node node = new Node(value);
         if(length == 0) {
             head = node;
-            tail = node;
         } else {
             tail.next = node;
-            tail = node;
         }
+        tail = node;
         length++;
     }
 
@@ -176,22 +175,5 @@ public class LinkedList {
                 ", tail=" + tail +
                 ", length=" + length +
                 '}';
-    }
-
-     static class Node {
-        private int value;
-        private Node next;
-
-         Node(int value) {
-            this.value = value;
-        }
-
-        @Override
-        public String toString() {
-            return "Node{" +
-                    "value=" + value +
-                    ", next=" + next +
-                    '}';
-        }
     }
 }
