@@ -1,4 +1,4 @@
-package com.dev.graph;
+package com.dev.datastructure.graph;
 
 import java.util.ArrayList;
 import java.util.HashMap;

@@ -1,4 +1,4 @@
-package com.dev.stack;
+package com.dev.datastructure.stack;
 
 public class StackMain {
     public static void main(String[] args) {

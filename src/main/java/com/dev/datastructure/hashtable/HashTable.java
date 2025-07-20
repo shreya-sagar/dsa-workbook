@@ -1,4 +1,4 @@
-package com.dev.hashtable;
+package com.dev.datastructure.hashtable;
 
 import java.util.ArrayList;
 import java.util.Arrays;

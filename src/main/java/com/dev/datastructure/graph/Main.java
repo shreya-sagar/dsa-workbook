@@ -1,4 +1,4 @@
-package com.dev.graph;
+package com.dev.datastructure.graph;
 
 public class Main {
     public static void main(String[] args) {

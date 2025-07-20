@@ -1,6 +1,6 @@
-package com.dev.stack;
+package com.dev.datastructure.stack;
 
-import com.dev.linkedlist.Node;
+import com.dev.datastructure.linkedlist.Node;
 
 public class Stack {
     Node top;

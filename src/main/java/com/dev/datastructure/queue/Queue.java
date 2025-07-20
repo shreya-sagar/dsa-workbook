@@ -1,6 +1,6 @@
-package com.dev.queue;
+package com.dev.datastructure.queue;
 
-import com.dev.linkedlist.Node;
+import com.dev.datastructure.linkedlist.Node;
 
 public class Queue {
     Node first;

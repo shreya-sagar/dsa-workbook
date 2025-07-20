@@ -1,4 +1,4 @@
-package com.dev.hashtable;
+package com.dev.datastructure.hashtable;
 
 public class Main {
     public static void main(String[] args) {

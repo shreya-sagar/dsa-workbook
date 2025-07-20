@@ -1,4 +1,4 @@
-package com.dev.trees;
+package com.dev.datastructure.trees;
 
 public class BinarySearchTree {
     private Node root;

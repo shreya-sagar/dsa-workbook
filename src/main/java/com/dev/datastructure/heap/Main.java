@@ -1,4 +1,4 @@
-package com.dev.heap;
+package com.dev.datastructure.heap;
 
 public class Main {
     public static void main(String[] args) {
